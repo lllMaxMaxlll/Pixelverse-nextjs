@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar/Navbar";
+import { Navbar } from "@/components";
 import { Routes } from "@/models";
 import "./globals.css";
 import { Sofia_Sans_Condensed } from "next/font/google";

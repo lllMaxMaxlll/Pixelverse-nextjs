@@ -11,7 +11,7 @@ function CardGame({ data }: Props) {
 	return (
 		<div className={style.card}>
 			<div className={style.cardInfo}>
-				<Link href={`/detail/${data.id}`}>
+				<Link href={`/games/${data.id}`}>
 					<h2 className={style.title}>{data.name}</h2>
 				</Link>
 			</div>
@@ -20,7 +20,7 @@ function CardGame({ data }: Props) {
 					<p key={g.id}>{g.name}</p>
 				))}
 			</div>
-			<Image width="300" height="400" src={data.background_image} alt={data.name} className={style.cardImg} />
+			<Image width="400" height="300" src={data.background_image} alt={data.name} className={style.cardImg} />
 		</div>
 	);
 }
