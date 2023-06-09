@@ -1,0 +1,166 @@
+.searchContainer {
+	display: flex;
+}
+
+.buttonsContainer {
+	margin: 0 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: max-content;
+}
+
+.buttonsContainer *:focus-visible {
+	outline: 0px solid #ffffff;
+}
+
+.buttonsContainer button {
+	font-family: inherit;
+	font-size: 1rem;
+	margin: 0 0.5rem;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	padding: 8px 20px;
+	background: transparent;
+	transition: all ease 0.2s;
+}
+.buttonsContainer button:enabled {
+	cursor: pointer;
+}
+
+.buttonsContainer button:disabled {
+	color: #505050;
+	border: 2px solid #505050;
+}
+
+.buttonsContainer button:hover:enabled {
+	box-shadow: 0 0 15px #065a60;
+}
+
+.buttonsContainer button:active:enabled {
+	box-shadow: 0 0 20px #3e1f47;
+	transform: scale(0.95);
+}
+
+.formGroup {
+	position: relative;
+	padding: 20px 0 0;
+	bottom: 15px;
+	margin-top: 10px;
+	max-width: 180px;
+}
+
+.formField {
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid #ffffffc7;
+	outline: 0;
+	font-size: 1.1rem;
+	color: #fff;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+}
+
+.formField::placeholder {
+	color: transparent;
+}
+
+.formField:placeholder-shown ~ .formLabel {
+	font-size: 1.1rem;
+	cursor: text;
+	top: 30px;
+}
+
+.formLabel {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1.1rem;
+	color: #ffffff;
+	pointer-events: none;
+}
+
+.formField:focus {
+	border-image: linear-gradient(to right, #006466, #4d194d);
+	border-image-slice: 1;
+}
+
+.formField:focus ~ .formLabel {
+	position: absolute;
+	top: 5px;
+	transition: 0.2s;
+	color: #006466;
+}
+
+.formField:required,
+.formField:invalid {
+	box-shadow: none;
+}
+
+.searchButton {
+	display: none;
+}
+
+.loader {
+	position: absolute;
+	left: -1.4rem;
+	top: 2rem;
+	border: 2px solid rgba(255, 255, 255);
+	border-left-color: transparent;
+	border-radius: 50%;
+}
+
+.loader {
+	position: absolute;
+	border: 2px solid rgba(255, 255, 255);
+	border-left-color: transparent;
+	width: 16px;
+	height: 16px;
+}
+
+.loader {
+	position: absolute;
+
+	border: 2px solid rgba(255, 255, 255);
+	border-left-color: transparent;
+	width: 16px;
+	height: 16px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.searchButton {
+		display: block;
+		position: absolute;
+		right: 0rem;
+		top: 2.1rem;
+	}
+
+	.searchButton {
+		cursor: pointer;
+	}
+
+	.searchButton:hover {
+		transform: scale(1.1);
+	}
+
+	.buttonsContainer {
+		display: none;
+	}
+
+	.formField {
+		width: 120px;
+	}
+}

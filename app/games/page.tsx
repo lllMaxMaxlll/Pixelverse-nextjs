@@ -1,4 +1,4 @@
-import { CardGame } from "@/components";
+import { CardGame, Navbar } from "@/components";
 import { getGames } from "./services";
 import style from "./games.module.css";
 
@@ -11,6 +11,7 @@ async function Games() {
 
 	return (
 		<div className={style.cardsContainer}>
+			<Navbar />
 			{games.map((game) => (
 				<CardGame key={game.id} data={game} />
 			))}

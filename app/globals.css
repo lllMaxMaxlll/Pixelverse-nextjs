@@ -1,10 +1,14 @@
 /* Declare variables */
 /* :root {
-	--background-color: ;
+	--font-sofia: ;
 } */
 
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+}
+
+body {
+	background-color: #111111;
 }

@@ -1,5 +1,7 @@
 import { getDetailGame } from "./services";
 import style from "./detailGame.module.css";
+import React from "react";
+import { BackButton } from "@/components";
 
 async function DetailGame({ params }: { params: { id: string } }) {
 	const detailGame = await getDetailGame(params.id);
@@ -13,11 +15,11 @@ async function DetailGame({ params }: { params: { id: string } }) {
 						backgroundImage: `radial-gradient(circle, rgba(17,17,17,0.8) 0%, rgba(17,17,17,0.85) 50%,rgba(17,17,17,0.9) 100%), url(${detailGame.background_image})`,
 					}}></div>
 				<div className={style.title}>
-					<h1>{detailGame.name}</h1>
+					<h2>{detailGame.name}</h2>
 				</div>
 				<div className={style.infoContainer}>
 					<div className={style.title}>
-						<p dangerouslySetInnerHTML={{ __html: detailGame.description }} />
+						<p>{detailGame.description_raw}</p>
 					</div>
 					<div className={style.info}>
 						<span>Released:</span>
@@ -25,12 +27,21 @@ async function DetailGame({ params }: { params: { id: string } }) {
 						<span>Rating:</span>
 						<p>{detailGame.rating}</p>
 						<span>Genres:</span>
-						<p>{detailGame.genres.map((genre) => `${genre.name} `)}</p>
+						<ul>
+							{detailGame.genres.map((genre) => (
+								<li>{genre.name}</li>
+							))}
+						</ul>
+						<br />
 						<span>Platforms:</span>
-						<p>{detailGame.platforms.map((platform) => `${platform.platform.name} `)}</p>
+						<ul>
+							{detailGame.platforms.map((platform) => (
+								<li>{platform.platform.name}</li>
+							))}
+						</ul>
 					</div>
 				</div>
-				{/* <button onClick={() => new Navigator()}>Go back!</button> */}
+				<BackButton />
 			</div>
 		</div>
 	);

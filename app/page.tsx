@@ -1,6 +1,5 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
-	return <main className={styles.main}></main>;
+function Home() {
+	return <div>Estas en el home</div>;
 }
+
+export default Home;

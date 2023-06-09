@@ -29,6 +29,7 @@
 
 .detail button {
 	font-size: 1.2rem;
+	font-family: inherit;
 	cursor: pointer;
 	align-self: center;
 	margin: 1rem;
@@ -51,7 +52,7 @@
 	transform: scale(0.95);
 }
 
-.title h1 {
+.title h2 {
 	position: relative;
 	font-size: 3rem;
 	padding: 1rem;
@@ -82,6 +83,10 @@
 .detail .info span {
 	font-size: 1.2rem;
 	font-weight: bold;
+}
+
+.detail .info ul li {
+	list-style: none;
 }
 
 @media screen and (max-width: 800px) {

@@ -1,5 +1,5 @@
 .nav {
-	position: relative;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -8,17 +8,181 @@
 	justify-content: space-between;
 	align-items: center;
 	z-index: 1000;
-	background-color: #11111180;
+	background-color: #111111;
 	transition: all 0.3s ease-in-out;
 }
 
-.nav div,
-.nav svg {
-	margin: auto 1rem;
+.navDark {
+	background-color: transparent;
 }
 
-.nav a {
-	margin: auto 0.5rem;
-	text-decoration: none;
-	font-size: 1.2rem;
+.logoContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logoContainer * {
+	margin: 0 3px;
+}
+
+.logoContainer svg {
+	animation: animlogo 6s ease-in-out infinite;
+	-webkit-animation: animlogo 6s ease-in-out infinite;
+	margin-left: 1rem;
+	margin-top: 0.3rem;
+}
+
+.logoContainer a:hover {
+	transform: scale(0.9);
+	transition: all 0.3s ease-in-out;
+}
+
+.logoNameColor {
+	font-size: 1.5rem;
+	/* background: linear-gradient(34deg, #006466, #144552, #212f45, #312244, #4d194d);
+	background-size: 100% 10%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; */
+	color: #e1e1e1;
+	cursor: default;
+}
+
+.logoNameWhite {
+	font-size: 1.5rem;
+	color: #e1e1e1;
+}
+
+.logoNameColor:hover {
+}
+
+.menu {
+	margin-right: 2rem;
+}
+
+.buttons {
+	font-size: 18px;
+	margin: 0 10px;
+	color: #e1e1e1;
+	font-weight: 700;
+	cursor: pointer;
+	position: relative;
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	/* transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition-duration: 400ms;
+	transition-property: color; */
+	transition: all color cubic-bezier(0.25, 0.8, 0.25, 1) 400ms;
+}
+
+.buttons:focus,
+.buttons:hover {
+	color: #fff;
+	text-shadow: 0 0 15px #4d194d;
+}
+
+.buttons:focus:after,
+.buttons:hover:after {
+	width: 100%;
+	left: 0%;
+}
+
+.buttons:after {
+	content: "";
+	pointer-events: none;
+	bottom: -2px;
+	left: 50%;
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background-color: #006466;
+	transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition-duration: 400ms;
+	transition-property: width, left;
+}
+
+.menuBtn {
+	display: none;
+}
+
+@keyframes animlogo {
+	0% {
+		fill: #4d194d;
+	}
+	50% {
+		fill: #144552;
+	}
+	100% {
+		fill: #4d194d;
+	}
+}
+
+@keyframes animlogo {
+	0% {
+		fill: #4d194d;
+	}
+	50% {
+		fill: #144552;
+	}
+	100% {
+		fill: #4d194d;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.logoNameColor {
+		display: none;
+	}
+	.menu {
+		display: none;
+	}
+	.menuOpen {
+		position: absolute;
+		margin-right: 0;
+		display: flex;
+		justify-content: center;
+		right: 0rem;
+		top: 0rem;
+		background-color: #111;
+		height: 100vh;
+		width: 15rem;
+	}
+
+	.menuOpen > div {
+		display: flex;
+		flex-direction: column;
+		margin-top: 5rem;
+	}
+
+	.menuOpen div > a {
+		margin: 1rem;
+	}
+
+	.menuOpen div > a > button {
+		font-size: 1.5rem;
+	}
+
+	.menuBtn {
+		display: block;
+		margin-right: 1rem;
+		cursor: pointer;
+		font-size: 2rem;
+		z-index: 50;
+	}
+	.menuBtn:hover {
+		filter: drop-shadow(0 0 5px #144552);
+		transition: all 0.3s ease-in-out;
+	}
+	.menuBtn:active {
+		transform: scale(0.9);
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.logoNameWhite {
+		display: none;
+	}
 }

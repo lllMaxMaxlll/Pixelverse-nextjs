@@ -5,5 +5,6 @@ export const getGames = (): Promise<Game[]> => {
 
 	return fetch(url)
 		.then((res) => res.json())
-		.then((data) => data.results);
+		.then((data) => data.results)
+		.catch((error) => console.log(error));
 };
