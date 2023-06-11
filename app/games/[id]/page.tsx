@@ -1,7 +1,7 @@
 import { getDetailGame } from "./services";
 import style from "./detailGame.module.css";
 import React from "react";
-import { BackButton } from "@/components";
+import { ReturnButton } from "@/components";
 
 async function DetailGame({ params }: { params: { id: string } }) {
 	const detailGame = await getDetailGame(params.id);
@@ -39,9 +39,16 @@ async function DetailGame({ params }: { params: { id: string } }) {
 								<li>{platform.platform.name}</li>
 							))}
 						</ul>
+						<br />
+						<span>Publishers:</span>
+						<ul>
+							{detailGame.publishers.map((publisher) => (
+								<li>{publisher.name}</li>
+							))}
+						</ul>
 					</div>
 				</div>
-				<BackButton />
+				<ReturnButton />
 			</div>
 		</div>
 	);

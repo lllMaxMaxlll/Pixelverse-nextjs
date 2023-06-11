@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-function BackButton() {
+function ReturnButton() {
 	const router = useRouter();
 
 	const handleGoBack = () => {
@@ -12,4 +12,4 @@ function BackButton() {
 	return <button onClick={handleGoBack}>Volver</button>;
 }
 
-export default BackButton;
+export default ReturnButton;

@@ -3,8 +3,11 @@ import { getGames } from "./services";
 import style from "./games.module.css";
 
 async function fetchGames() {
-	return await getGames();
+	const games = await getGames();
+	return games.results;
 }
+
+const apiUrl = `${process.env.API_URL}/games?${process.env.API_KEY}`;
 
 async function Games() {
 	const games = await fetchGames();
@@ -12,9 +15,9 @@ async function Games() {
 	return (
 		<div className={style.cardsContainer}>
 			<Navbar />
-			{games.map((game) => (
-				<CardGame key={game.id} data={game} />
-			))}
+			{games.map((game) => {
+				return <CardGame key={game.id} data={game} />;
+			})}
 		</div>
 	);
 }

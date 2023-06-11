@@ -1,10 +1,9 @@
-import { Game } from "../models";
+import { Api } from "../models";
 
-export const getGames = (): Promise<Game[]> => {
-	const url: string = `${process.env.API_URL}/games?${process.env.API_KEY}`;
+const defaultUrl: string = `${process.env.API_URL}/games?${process.env.API_KEY}`;
 
+export const getGames = (url: string = defaultUrl): Promise<Api> => {
 	return fetch(url)
 		.then((res) => res.json())
-		.then((data) => data.results)
 		.catch((error) => console.log(error));
 };
