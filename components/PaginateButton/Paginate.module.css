@@ -1,8 +1,7 @@
-.cardsContainer {
-	margin-top: 5rem;
+.paginate {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 }
 
 .paginate button {
