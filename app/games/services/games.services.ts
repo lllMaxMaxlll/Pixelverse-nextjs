@@ -1,10 +1,11 @@
-import { Api } from "../models";
+import { GetGamesResponse } from "../models";
 
-const defaultUrl: string = `${process.env.API_URL}/games?${process.env.API_KEY}`;
+export const getGames = (url?: string): Promise<GetGamesResponse> => {
+	const apiUrl: string = url || `${process.env.API_URL}/games?${process.env.API_KEY}`;
 
-export const getGames = (url: string = defaultUrl): Promise<Api> => {
-	console.log("LLEGUE AL GET GAMES CON ESTA URL", url);
-	return fetch(url)
+	return fetch(apiUrl)
 		.then((res) => res.json())
-		.catch((error) => console.log(error));
+		.catch((error) => {
+			throw new Error("Error loading more games");
+		});
 };

@@ -1,11 +1,11 @@
-.cardsContainer {
-	margin-top: 5rem;
+.loadButton {
+	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 }
 
-.paginate button {
+.loadButton button {
 	font-size: 1.2rem;
 	font-family: inherit;
 	cursor: pointer;
@@ -20,12 +20,12 @@
 	z-index: 400;
 }
 
-.paginate button:hover {
+.loadButton button:hover {
 	box-shadow: 0 0 15px #065a60;
 	transform: scale(1.05);
 }
 
-.paginate button:active {
+.loadButton button:active {
 	box-shadow: 0 0 20px #3e1f47;
 	transform: scale(0.95);
 }

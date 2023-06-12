@@ -15,9 +15,6 @@ const silkscreen = Silkscreen({
 });
 
 export default function Navbar() {
-	// const router = useRouter();
-	// console.log(router);
-
 	// State to responsive menu
 	const [isOpen, setIsOpen] = useState(false);
 

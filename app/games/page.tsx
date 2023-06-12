@@ -1,6 +1,6 @@
 "use client";
 
-import { CardGame, Navbar, PaginateButton } from "@/components";
+import { CardsContainer, Navbar } from "@/components";
 import { getGames } from "./services";
 import style from "./games.module.css";
 import { Game } from "./models";
@@ -16,25 +16,24 @@ async function Games() {
 	const [prev, setPrev] = useState<string | null>(null);
 
 	const loadGames = async (url?: string) => {
-		const results = await fetchGames(url);
-		setGames(results.results);
-		setNext(results.next);
-		setPrev(results.previous);
+		const response = await fetchGames(url);
+		setGames(response.results);
+		setNext(response.next);
+		setPrev(response.previous);
 	};
 
-	const handleNextPage = () => {
+	const handleNext = () => {
 		if (next) {
 			loadGames(next);
 		}
 	};
 
-	const handlePrevPage = () => {
+	const handlePrev = () => {
 		if (prev) {
 			loadGames(prev);
 		}
 	};
 
-	// Llama a loadGames al renderizar inicialmente el componente
 	useEffect(() => {
 		loadGames();
 	}, []);
@@ -42,13 +41,11 @@ async function Games() {
 	return (
 		<>
 			<Navbar />
-			<div className={style.cardsContainer}>
-				{games.length &&
-					games.map((game) => {
-						return <CardGame key={game.id} data={game} />;
-					})}
+			<CardsContainer games={games} />
+			<div className={style.loadButton}>
+				{prev && <button onClick={handlePrev}>Prev</button>}
+				{next && <button onClick={handleNext}>Next</button>}C
 			</div>
-			<PaginateButton handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} />
 		</>
 	);
 }

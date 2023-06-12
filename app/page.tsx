@@ -1,5 +1,11 @@
+import { Landing } from "@/components";
+
 function Home() {
-	return <div>Estas en el home</div>;
+	return (
+		<>
+			<Landing />
+		</>
+	);
 }
 
 export default Home;

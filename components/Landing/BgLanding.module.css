@@ -1,0 +1,93 @@
+.container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: #111;
+}
+
+.container .icons {
+	position: relative;
+	top: -70%;
+	left: -10%;
+	width: 100%;
+	display: flex;
+	padding: 0 5px;
+	white-space: nowrap;
+	font-size: 5rem;
+	transform: rotate(30deg);
+}
+
+.icons div svg {
+	color: rgba(0, 0, 0, 0.2);
+	padding: 0 5px;
+	transition: all 1s;
+	user-select: none;
+	cursor: default;
+}
+
+.icons svg:hover {
+	color: #4d194d;
+	transition: 0s;
+	filter: drop-shadow(0px 0px 10px #4d194d);
+}
+
+.icons:nth-child(even) svg:hover {
+	color: #212f45;
+	transition: 0s;
+	filter: drop-shadow(0px 0px 10px #212f45);
+}
+
+.container .icons div {
+	animation: animate1 100s linear infinite;
+}
+
+.container .icons div:nth-child(2) {
+	animation: animate2 100s linear infinite;
+	animation-delay: -50s;
+}
+
+@keyframes animate1 {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+@keyframes animate2 {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
+
+.container .icons:nth-child(even) div {
+	animation: animate3 100s linear infinite;
+	animation-delay: -50s;
+}
+
+.container .icons:nth-child(even) div:nth-child(2) {
+	animation: animate4 100s linear infinite;
+}
+
+@keyframes animate3 {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+@keyframes animate4 {
+	0% {
+		transform: translateX(-200%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}

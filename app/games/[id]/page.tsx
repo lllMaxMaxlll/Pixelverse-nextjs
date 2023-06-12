@@ -29,14 +29,14 @@ async function DetailGame({ params }: { params: { id: string } }) {
 						<span>Genres:</span>
 						<ul>
 							{detailGame.genres.map((genre) => (
-								<li>{genre.name}</li>
+								<li key={genre.id}>{genre.name}</li>
 							))}
 						</ul>
 						<br />
 						<span>Platforms:</span>
 						<ul>
 							{detailGame.platforms.map((platform) => (
-								<li>{platform.platform.name}</li>
+								<li key={platform.platform.id}>{platform.platform.name}</li>
 							))}
 						</ul>
 						<br />
